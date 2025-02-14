@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DotaSkinsDealer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <header>
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="auth-tabs">
+                    <button class="tab-btn active" data-tab="login">Войти</button>
+                    <button class="tab-btn" data-tab="register">Регистрация</button>
+                </div>
+                
+                <div class="tab-content" id="loginTab">
+                    <form class="auth-form" action="/login" method="post">
+                        <div id="login-error-message" class="error-message"></div>
+                        <input type="email" name="email" placeholder="Email" required>  <!-- Изменено на email -->
+                        <input type="password" name="password" placeholder="Пароль" required>
+                        <button type="submit">Войти</button>
+                    </form>
+                </div>
+                <div class="tab-content" id="registerTab" style="display: none;">
+                    <form class="auth-form" action="http://127.0.0.1:5000/register" method="post" id="registerForm">
+                         <div id="register-error-message" class="error-message"></div>
+                        <input type="text" name="login" placeholder="Логин" required> <!-- Изменено на text -->
+                        <input type="email" name="email" placeholder="Email" required>
+                        <input type="password" name="password" placeholder="Пароль" required>
+                        <input type="password" name="confirm_password" placeholder="Подтвердите пароль" required>
+                        <button type="submit">Зарегистрироваться</button>
+                    </form>
+                </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+        <div class = "header-container">
+            <a href="#">DotaSkinsDealer</a>
+           </div>
+            <div class="logo">
+            </div>
+            <div class="categories-dropdown">
+                <button class="categories-button">
+                    <span>Категории</span>
+                    <span class="categories-icon">
+                        <ion-icon name="chevron-down"></ion-icon>
+                    </span>
+                </button>
+                <ul class="categories-menu">
+                    <li data-category="all">Все</li>
+                    <li data-category="Arcana">Arcana</li>
+                    <li data-category="Legendary">Legendary</li>
+                </ul>
+            </div>
+            
+             <nav>
+                <ul>
+                    <li><a href="#">Услуги</a></li>
+                     <li><a href="#">Наша команда</a></li>
+                </ul>
+             </nav>
+                <div class="header-actions">
+                    <button><ion-icon name="heart"></ion-icon></button>
+                    <button><ion-icon name="cart"></ion-icon></button>
+                </div>
+                    <div class="lang-dropdown">
+                        <button class="lang-button">
+                            <span>Русский, RUB</span>
+                            <span class="lang-icon">
+                                <ion-icon name="chevron-down"></ion-icon>
+                            </span>
+                        </button>
+                        <ul class="lang-menu">
+                            <li data-lang="ru">Русский, RUB</li>
+                            <li data-lang="en">English, USD</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="vxod"><button id="loginButton">Войти</button></div>
+        </div>
+    </header>
+      <section class="site-description">
+          <div class="container">
+              <h2>Добро пожаловать в наш магазин скинов -<strong>DotaSkinsDealer!</strong></h2>
+              <p>У нас есть гарантии качества и быстрая доставка.</p>
+             
+          </div>
+      </section>
+    <h3 class="category-heading">Все предложения в категории Skins</h3>
+
+    <main>
+        <div class="container">
+            <div class="row" id="products-section">
+                <div class="product-wrapper">
+                    <div class="product" data-category="Arcana">
+                        <div class="image">
+                            <div class="sale-tag">-3%</div>
+                            <img src="https://community.fastly.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KW1Zwwo4NUX4oFJZEHLbXK9QlSPcU8rA1YXkHfVeHixMfSV1JjIw1SuL6aLwJt3P33dDxW6c6JmIGZkPK6YeKDkD0Hu8R027nC9t302wDhrUJrN2HzJdKUIAM8YgmE-1O2yebpg4j84sqCpPG6Jg/330x192?allow_animated=1" alt="">
+                            <div class="info">
+                                <div class="account-info">
+                                    <h3 class="account-rank">Demon Eater</h3>
+                                    <div class="mmr">Пылающая душа, Arcana</div>
+                                </div>
+                                <div class="stats-grid">
+                                    <div class="stats-item">
+                                        В наличии
+                                        <div class="stats-value">1шт</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price"><span>₽</span>1488<del>2500</del></div>
+                            <button class="buy-button">Купить</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-wrapper">
+                    <div class="product" data-category="Arcana">
+                        <div class="image">
+                            <div class="sale-tag">-5%</div>
+                            <img src="https://community.fastly.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KW1Zwwo4NUX4oFJZEHLbXL5B5QK5l9vR5PXkPCReis08qcUk93JApWia6gORVvwfHEcDlH09C3hoeO2fb3au3Uzm4BuMNy0ryS9Nmm3w3m_RZlamH0IISVcwE8YQ6F81PqxLzxxcjrOGl8rcI/330x192?allow_animated=1" alt="">
+                            <div class="info">
+                                <div class="account-info">
+                                    <h3 class="account-rank">Fractal Horns of Inner Abysm</h3>
+                                    <div class="mmr">Демонические рога, Arcana</div>
+                                </div>
+                                <div class="stats-grid">
+                                    <div class="stats-item">
+                                        В наличии
+                                        <div class="stats-value">1шт</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price"><span>₽2100</span><del>3000</del></div>
+                            <button class="buy-button">Купить</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-wrapper">
+                    <div class="product" data-category="Arcana">
+                        <div class="image">
+                            <div class="sale-tag">-10%</div>
+                            <img src="https://community.fastly.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KW1Zwwo4NUX4oFJZEHLbXK9QlSPcUivB9aSQPRVees2c6cQ0hwIgFot6imKglhnfWbdz8SuYjkw4SJz_OmZrjUlGoD6px307yV9Ir23lK18hZpN2H7IIGLMlhprnEbA94/330x192?allow_animated=1" alt="">
+                            <div class="info">
+                                <div class="account-info">
+                                    <h3 class="account-rank">Feast of Abscession</h3>
+                                    <div class="mmr">Аксессуар, Arcana</div>
+                                </div>
+                                <div class="stats-grid">
+                                    <div class="stats-item">
+                                        В наличии
+                                        <div class="stats-value">15шт</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price"><span>₽</span>3999<del>5999</del></div>
+                            <button class="buy-button">Купить</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-wrapper">
+                    <div class="product" data-category="Arcana">
+                        <div class="image">
+                            <div class="sale-tag">-15%</div>
+                            <img src="https://community.fastly.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KW1Zwwo4NUX4oFJZEHLbXK9QlSPcU4vBxaSV7eRvG5mM7BUFx6JEtdo72iLhVu0ubcTjxQ7924lb-GluT_DKjFj2dUufp9i_vG8ML0iQLgrkBqZWHxJoaSelc6Z1-E_Afsx-jugJbp752cwHMxviVxty7fgVXp1qH0S4DD/330x192?allow_animated=1" alt="">
+                            <div class="info">
+                                <div class="account-info">
+                                    <h3 class="account-rank">Bladeform Legacy</h3>
+                                    <div class="mmr">Аксессуар, Arcana</div>
+                                </div>
+                                <div class="stats-grid">
+                                    <div class="stats-item">
+                                        В наличии
+                                        <div class="stats-value">7шт</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price"><span>₽</span>2300<del>2999</del></div>
+                            <button class="buy-button">Купить</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-wrapper">
+                    <div class="product" data-category="Legendary">
+                        <div class="image">
+                            <div class="sale-tag">-0%</div>
+                            <img src="https://community.fastly.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KW1Zwwo4NUX4oFJZEHLbXL5B5QK5l9qBVJRUHRQOGS0creUlFxagVZorOoKgBl7PXNfDxO6eO6lZKMkrnwN7qJw28I6ZFw3r6WpdWiiVDkqEZkMWugd9SXJFI2YFDV-QPtlO65m9bi67BYITzs/330x192?allow_animated=1" alt="">
+                            <div class="info">
+                                <div class="account-info">
+                                    <h3 class="account-rank">The Disciple's Path</h3>
+                                    <div class="mmr">Аксессуар, Legendary</div>
+                                </div>
+                                <div class="stats-grid">
+                                    <div class="stats-item">
+                                        В наличии
+                                        <div class="stats-value">18шт</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price"><span>₽</span>850</div>
+                            <button class="buy-button">Купить</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-wrapper">
+                    <div class="product" data-category="Legendary">
+                        <div class="image">
+                            <div class="sale-tag">-15%</div>
+                            <img src="https://community.fastly.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KW1Zwwo4NUX4oFJZEHLbXL5B5QK5l9oBVLQ0fVVdum3sucWlNiKg9SpIWuIgNfw_baYjJM7eO6lZKMkrmiMbiHxDIB7ZFyi-uToNzxi1Lsr0ZtZT_6J9WdIQY2MlCD8gO3xru-m9bi66pdp3D0/330x192?allow_animated=1" alt="">
+                            <div class="info">
+                                <div class="account-info">
+                                    <h3 class="account-rank">Acolyte of the Lost Arts</h3>
+                                    <div class="mmr">Аксессуар, Legendary</div>
+                                </div>
+                                <div class="stats-grid">
+                                    <div class="stats-item">
+                                        В наличии
+                                        <div class="stats-value">13шт</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price"><span>₽</span>850<del>999</del></div>
+                            <button class="buy-button">Купить</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-wrapper">
+                    <div class="product" data-category="Legendary">
+                        <div class="image">
+                            <div class="sale-tag">-15%</div>
+                            <img src="https://community.fastly.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KW1Zwwo4NUX4oFJZEHLbXL5B5QK5l9uRNcQljfStusxNzSQE59KztHs6i2JAlhnOPAcDNW49GJlZOYluTnOrXuhm5D-8p_i9bN9J7yjRrj-UZlNz2iJ4DDdFNtZV3T-1O4w-i81MXq7snJnCRhvHJw5XvUyxSwn1gSOUf4YCSx/330x192?allow_animated=1" alt="">
+                            <div class="info">
+                                <div class="account-info">
+                                    <h3 class="account-rank">Exile Unveiled</h3>
+                                    <div class="mmr">Аксессуар, Legendary</div>
+                                </div>
+                                <div class="stats-grid">
+                                    <div class="stats-item">
+                                        В наличии
+                                        <div class="stats-value">11шт</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price"><span>₽</span>850<del>999</del></div>
+                            <button class="buy-button">Купить</button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="product-wrapper">
+                    <div class="product" data-category="Arcana">
+                        <div class="image">
+                            <div class="sale-tag">-0%</div>
+                            <img src="https://community.fastly.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KW1Zwwo4NUX4oFJZEHLbXK9QlSPcU0qBhYQEnDVNu72MbXHFt1JgFbs6m2FBFv2vf3cC9B7dK324aKlPL4NqjCqX1e4cFOi_vC9IL0t1i1uRQ5fWCncIOXcwA5YgrY_lHtyL--1sPv7szAy3BjsyQh5HmLyxXk0x9MZ7BxxavJYkmcojs/330x192?allow_animated=1" alt="">
+                            <div class="info">
+                                <div class="account-info">
+                                    <h3 class="account-rank">Claszian Apostasy Head</h3>
+                                    <div class="mmr">Аксессуар, Arcana</div>
+                                </div>
+                                <div class="stats-grid">
+                                    <div class="stats-item">
+                                        В наличии
+                                        <div class="stats-value">3шт</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-footer">
+                            <div class="price"><span>₽</span>16999</div>
+                            <button class="buy-button">Купить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="copyright">© 2024 DotaSkinsDealer</div>
+            <div class="disclaimer">
+                <p>Все названия продуктов, компаний, логотипы и товарные знаки являются собственностью корпорации Valve и их лицензиаров.</p>
+                <p>Данный сайт является независимой торговой площадкой и не является собственником продаваемых товаров/услуг.</p>
+                <p>Все права защищены их соответствующими владельцами.</p>
+            </div>
+        </div>
+    </footer>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const modal = document.getElementById('loginModal');
+        const closeBtn = document.querySelector('.close');
+        const loginButton = document.getElementById('loginButton');
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        const errorMessage = document.getElementById('error-message');
+        const loginForm = document.getElementById('loginForm');
+        const registerForm = document.getElementById('registerForm');
+
+        loginButton.addEventListener('click', () => {
+            modal.style.display = 'block';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+            clearErrorMessage();
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                clearErrorMessage();
+            }
+        });
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabName = btn.getAttribute('data-tab');
+
+                tabBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                tabContents.forEach(content => {
+                    content.style.display = 'none';
+                });
+                document.getElementById(tabName + 'Tab').style.display = 'block';
+                clearErrorMessage();
+            });
+        });
+
+        function displayErrorMessage(message) {
+            errorMessage.textContent = message;
+            errorMessage.style.display = 'block';
+        }
+
+        function clearErrorMessage() {
+            errorMessage.textContent = '';
+            errorMessage.style.display = 'none';
+        }
+
+        async function submitForm(form, url) {
+            const formData = new FormData(form);
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (data.error) {
+                    displayErrorMessage(data.error);
+                } else if (data.success) {
+                    window.location.href = '/profile'; // Перенаправление на профиль
+                } else {
+                    console.error("Unknown response:", data);
+                    displayErrorMessage("Неизвестная ошибка.");
+                }
+            } catch (error) {
+                console.error("Fetch error:", error);
+                displayErrorMessage("Ошибка соединения.");
+            }
+        }
+
+        loginForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            await submitForm(loginForm, '/login');
+        });
+
+        registerForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            await submitForm(registerForm, 'http://127.0.0.1:5000/register');
+        });
+    });
+</script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const products = document.querySelectorAll('.product');
+            products.forEach((product, index) => {
+                setTimeout(() => {
+                    product.classList.add('animated');
+                }, index * 150); // Задержка для последовательного появления
+            });
+        });
+    </script>
+    <script>
+          const categoriesButton = document.querySelector('.categories-button');
+          const categoriesMenu = document.querySelector('.categories-menu');
+            const categoryHeading = document.querySelector('.category-heading');
+          const productsContainer = document.querySelector('.row');
+          const products = document.querySelectorAll('.product');
+           const categoriesIcon = document.querySelector('.categories-icon ion-icon'); // Получаем иконку
+  
+          categoriesButton.addEventListener('click', () => {
+               categoriesMenu.classList.toggle('show');
+              if (categoriesMenu.classList.contains('show')) {
+                  categoriesIcon.setAttribute('name', 'chevron-up'); // Меняем иконку
+              } else {
+                  categoriesIcon.setAttribute('name', 'chevron-down'); // Меняем иконку
+              }
+          });
+  
+          
+           categoriesMenu.addEventListener('click', (event) => {
+           if (event.target.tagName === 'LI') {
+            const selectedCategory = event.target.getAttribute('data-category');
+              categoryHeading.textContent = selectedCategory === 'all' ? "Все предложения в категории Skins" : `Все предложения в категории ${selectedCategory}`;
+              document.getElementById('products-section').scrollIntoView({
+              behavior: 'smooth',
+              block: 'start',
+              inline: 'nearest'
+});
+
+
+
+
+
+            // Получаем все товары и скрываем их
+           const visibleProducts = Array.from(products).filter(product => {
+             
+                 const productCategory = product.getAttribute('data-category');
+                  if (selectedCategory === 'all' || productCategory === selectedCategory) {
+                       return true
+                   }
+                    return false
+                });
+                
+               productsContainer.innerHTML = '';
+                   
+               
+            visibleProducts.forEach(product => {
+               product.style.opacity = '0';
+                setTimeout(() => {
+                  product.style.display = 'none';
+                 }, 300)
+                     productsContainer.appendChild(product)
+
+            });
+
+
+           // Показываем выбранные товары с задержкой и плавным появлением
+           setTimeout(() => {
+         
+                 visibleProducts.forEach((product, index) => {
+                    product.style.display = 'flex';
+                     setTimeout(() => {
+                       product.style.opacity = '1';
+                     }, index * 100)
+                 });
+
+            }, 300);
+
+
+               categoriesMenu.classList.remove('show');
+                 categoriesIcon.setAttribute('name', 'chevron-down');
+               }
+            });
+          </script>
+          <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const products = document.querySelectorAll('.product');
+                products.forEach((product, index) => {
+                    setTimeout(() => {
+                        product.classList.add('animated');
+                    }, index * 400);
+          
+                    product.addEventListener('mouseenter', () => {
+                        products.forEach(otherProduct => {
+                            if (otherProduct !== product) {
+                                otherProduct.classList.add('blurred');
+                            } else {
+                                 otherProduct.classList.add('highlighted');
+                             }
+                             
+                        });
+                        product.addEventListener('mouseleave', () => {
+                                products.forEach(otherProduct => {
+                                  otherProduct.classList.remove('blurred');
+                                     otherProduct.classList.remove('highlighted');
+                               });
+    
+
+                               product.addEventListener('mouseleave', () => {
+                              clearTimeout(blurTimeout)
+                             blurTimeout = setTimeout(() => {
+                              products.forEach(otherProduct => {
+                               otherProduct.classList.remove('blurred');
+                                otherProduct.classList.remove('highlighted');
+                             });
+                              }, 500); // Задержка 300 мс
+                       
+                        });
+                });
+            });
+          });
+          });
+          </script>
+          <script>
+            const modal = document.getElementById('loginModal');
+            const closeBtn = document.querySelector('.close');
+            const loginButton = document.getElementById('loginButton');
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+        
+            loginButton.addEventListener('click', () => {
+                modal.style.display = 'block';
+            });
+        
+            closeBtn.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+        
+            window.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const tabName = btn.getAttribute('data-tab');
+                    
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    tabContents.forEach(content => {
+                        content.style.display = 'none';
+                    });
+                    document.getElementById(tabName + 'Tab').style.display = 'block';
+                });
+            });
+        </script>
+
+</body>
+</html>
+
